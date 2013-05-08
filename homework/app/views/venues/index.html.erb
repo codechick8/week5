@@ -1,0 +1,36 @@
+<h1>Meetup App</h1>
+<nav>
+  <%= link_to "Events", events_url %>
+  <%= link_to "Venues", venues_url %>
+</nav>
+
+<hr>
+
+<%= link_to 'Add a New Event', new_event_path %> |
+<%= link_to 'Add a New Venue', new_venue_path %>
+<br><br>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Address</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @venues.each do |venue| %>
+  <tr>
+    <td><%= link_to venue.name, venue_path(venue) %></td>
+    <th></th>
+    <td><%= venue.address %></td>
+    <th></th>
+    
+    <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
+    <td><%= link_to 'Delete', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />

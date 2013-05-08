@@ -1,0 +1,15 @@
+<h1>Meetup App</h1>
+<nav>
+  <%= link_to "Events", events_url %>
+  <%= link_to "Venues", venues_url %>
+</nav>
+
+<hr>
+
+<h1> Editing Event </h1>
+
+<%= render 'form' %>
+
+
+<% link_to 'Show', @event %> |
+<%= link_to 'Back', events_path %>

@@ -1,0 +1,37 @@
+<h1>Meetup App</h1>
+<nav>
+  <%= link_to "Events", events_url %>
+  <%= link_to "Venues", venues_url %>
+</nav>
+
+<hr>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2>
+    <b> Event Details </b>
+    
+  </h2>
+</p>
+
+<%= link_to "Edit This Event", edit_event_path(@event) %>
+<br><br>
+
+<p>
+  <b>Title:</b>
+  <%= @event.title %>
+</p>
+
+<p>
+  <b>Date/Time:</b>
+  <%= @event.datetime.to_formatted_s(:short) %>
+</p>
+
+<p>
+  <b>Venue:</b>
+  <%= @event.venue.name %>
+</p>
+
+
+<%= link_to 'Back', events_path %>
